@@ -1,6 +1,7 @@
 # Your code goes here!
 class Anagram
   attr_accessor :word
+  @@match = []
 
   def initialize(word)
     @word = word
@@ -9,9 +10,9 @@ class Anagram
   def match(some_word)
     some_word.each { |e|
       if e.split("").sort == @word.split("").sort
-        return e
+        @@match << e
       end
       }
-      return []
+      @@match
   end
 end
