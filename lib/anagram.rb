@@ -6,7 +6,12 @@ class Anagram
     @word = word
   end
 
-  def match(%w(some words))
-
+  def match(some_word)
+    some_word.each { |e|
+      if e.split("").sort == @word.sort
+        return e
+      end
+      }
+      return []
   end
 end
